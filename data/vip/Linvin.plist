@@ -1,0 +1,17 @@
+{
+  "name": "Linvin",
+  "age": "18",
+  "telephone": "01 0011 0001",
+  "email": "example@gugle.com",
+  "address": "example street",
+  "heart_function": "healty",
+  "operation": "yes",
+  "metal": "none",
+  "appetite": "well",
+  "excretion": "pretty fine",
+  "sleep_quality": "good",
+  "disease": "none",
+  "note": "need lofi music",
+  "is_member": true,
+  "records": []
+}

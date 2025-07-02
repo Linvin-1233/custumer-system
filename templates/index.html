@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>客户总览</title>
+</head>
+<body>
+  <h1>客户总览</h1>
+
+  <form method="get" action="{{ url_for('main.index') }}">
+    <input type="text" name="search" placeholder="搜索客户姓名" value="{{ search | default('') }}">
+    <button type="submit">搜索</button>
+    {% if search %}
+      <a href="{{ url_for('main.index') }}">清除搜索</a>
+    {% endif %}
+  </form>
+
+  <table border="1" cellpadding="6" cellspacing="0">
+    <thead>
+      <tr>
+        <th>姓名</th>
+        <th>年龄</th>
+        <th>电话</th>
+        <th>邮箱</th>
+        <th>地址</th>
+        <th>心脏功能</th>
+        <th>有无手术</th>
+        <th>有无金属</th>
+        <th>胃口</th>
+        <th>排泄</th>
+        <th>睡眠质量</th>
+        <th>会员类型</th>
+        <th>上次消费</th>
+        <th>余额</th>
+        <th>病史</th>
+        <th>备注</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% if customers %}
+        {% for c in customers %}
+        <tr>
+          <td><a href="{{ url_for('main.user_detail', name=c.name) }}">{{ c.name }}</a></td>
+          <td>{{ c.age }}</td>
+          <td>{{ c.telephone }}</td>
+          <td>{{ c.email }}</td>
+          <td>{{ c.address }}</td>
+          <td>{{ c.heart_function }}</td>
+          <td>{{ c.operation }}</td>
+          <td>{{ c.metal }}</td>
+          <td>{{ c.appetite }}</td>
+          <td>{{ c.excretion }}</td>
+          <td>{{ c.sleep_quality }}</td>
+          <td>{{ c.group }}</td>
+          <td>{{ c.last_date }}</td>
+          <td>{{ c.balance }}</td>
+          <td>{{ c.disease }}</td>
+          <td>{{ c.note }}</td>
+          <td>
+            <a href="{{ url_for('main.user_detail', name=c.name) }}">详情</a> |
+            <a href="{{ url_for('record.add_record', name=c.name) }}">录入记录</a> |
+            <a href="{{ url_for('main.edit_user', name=c.name) }}">编辑</a> |
+            <a href="{{ url_for('main.confirm_delete', name=c.name) }}">删除</a>
+
+          </td>
+        </tr>
+        {% endfor %}
+      {% else %}
+        <tr>
+          <td colspan="17">暂无客户数据</td>
+        </tr>
+      {% endif %}
+    </tbody>
+  </table>
+
+  <p><a href="{{ url_for('main.add_user') }}">添加新客户</a></p>
+  <p><a href="{{ url_for('main.backup_list') }}">客户数据备份文件查看</a></p>
+
+
+</body>
+</html>
+

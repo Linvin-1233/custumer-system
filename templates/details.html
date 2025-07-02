@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>客户详情 - {{ user.name }}</title>
+</head>
+<body>
+  <h1>客户详情：{{ user.name }}</h1>
+  <p>会员：{{ '是' if user.is_member else '否' }}</p>
+  <p>年龄：{{ user.age }}</p>
+  <p>电话：{{ user.telephone }}</p>
+  <p>邮箱：{{ user.email }}</p>
+  <p>地址：{{ user.address }}</p>
+  <p>心脏功能：{{ user.heart_function }}</p>
+  <p>有无手术：{{ user.operation }}</p>
+  <p>有无金属：{{ user.metal }}</p>
+  <p>胃口：{{ user.appetite }}</p>
+  <p>排泄：{{ user.excretion }}</p>
+  <p>睡眠质量：{{ user.sleep_quality }}</p>
+  <p>病史：{{ user.disease }}</p>
+  <p>备注：{{ user.note }}</p>
+
+  <h2>消费/充值记录</h2>
+  <table border="1" cellpadding="6" cellspacing="0">
+    <thead>
+      <tr><th>日期</th><th>变动金额</th><th>变动前余额</th><th>变动后余额</th></tr>
+    </thead>
+    <tbody>
+      {% for r in user.records %}
+      <tr>
+        <td>{{ r.date }}</td>
+        <td>{{ r.change }}</td>
+        <td>{{ r.before_balance }}</td>
+        <td>{{ r.after_balance }}</td>
+      </tr>
+      {% else %}
+      <tr><td colspan="4">暂无记录</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <p>
+    <a href="{{ url_for('record.add_record', name=user.name) }}">录入新记录</a> |
+    <a href="{{ url_for('main.index') }}">返回客户列表</a>
+  </p>
+</body>
+</html>

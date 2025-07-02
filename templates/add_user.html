@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>添加新客户</title>
+</head>
+<body>
+  <h1>添加新客户</h1>
+
+  <form method="post">
+    <label>姓名:<br><input type="text" name="name" required></label><br><br>
+      <label>年龄:<br><textarea name="age" rows="4" cols="50"></textarea></label><br><br>
+      <label>电话:<br><textarea name="telephone" rows="4" cols="50"></textarea></label><br><br>
+      <label>邮箱:<br><textarea name="email" rows="4" cols="50"></textarea></label><br><br>
+      <label>地址:<br><textarea name="address" rows="4" cols="50"></textarea></label><br><br>
+      <label>心脏功能:<br><textarea name="heart_function" rows="4" cols="50"></textarea></label><br><br>
+      <label>有无手术:<br><textarea name="operation" rows="4" cols="50"></textarea></label><br><br>
+      <label>有无金属:<br><textarea name="metal" rows="4" cols="50"></textarea></label><br><br>
+      <label>胃口:<br><textarea name="appetite" rows="4" cols="50"></textarea></label><br><br>
+      <label>排泄:<br><textarea name="excretion" rows="4" cols="50"></textarea></label><br><br>
+      <label>睡眠质量:<br><textarea name="sleep_quality" rows="4" cols="50"></textarea></label><br><br>
+    <label>病史:<br><input type="text" name="disease"></label><br><br>
+    <label>是否会员:<input type="checkbox" name="is_member"></label><br><br>
+    <label>备注:<br><textarea name="note" rows="4" cols="50"></textarea></label><br><br>
+
+
+    <button type="submit">添加客户</button>
+  </form>
+
+  <p><a href="{{ url_for('main.index') }}">返回客户列表</a></p>
+</body>
+</html>

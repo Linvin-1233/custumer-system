@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>备份文件列表 - {{ year_month }}</title>
+</head>
+<body>
+  <h1>备份文件列表 - {{ year_month }}</h1>
+  <ul>
+    {% if files %}
+      {% for file in files %}
+        <li><a href="{{ url_for('main.backup_file_detail', year_month=year_month, filename=file) }}">{{ file }}</a></li>
+      {% endfor %}
+    {% else %}
+      <li>该目录下暂无备份文件</li>
+    {% endif %}
+  </ul>
+  <p><a href="{{ url_for('main.backup_list') }}">返回备份年月列表</a></p>
+  <p><a href="{{ url_for('main.index') }}">返回客户总览</a></p>
+</body>
+</html>

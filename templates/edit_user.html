@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>编辑 {{ user.name }}</title></head>
+<body>
+  <h1>编辑 {{ user.name }} 的资料</h1>
+  <form method="post">
+    {% for field in ['name', 'age', 'telephone', 'email', 'address', 'heart_function', 'operation', 'metal', 'appetite', 'excretion', 'sleep_quality', 'disease'] %}
+      <label>{{ field }}:<br><input type="text" name="{{ field }}" value="{{ user[field] }}"></label><br><br>
+    {% endfor %}
+    <label>是否会员:<input type="checkbox" name="is_member" {% if user.is_member %}checked{% endif %}></label><br><br>
+    <label>备注:<br><textarea name="note" rows="4" cols="50">{{ user.note }}</textarea></label><br><br>
+    <button type="submit">保存修改</button>
+    <a href="{{ url_for('main.user_detail', name=user.name) }}">取消</a>
+  </form>
+</body>
+</html>
