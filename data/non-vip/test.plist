@@ -1,0 +1,17 @@
+{
+  "name": "test",
+  "age": "00",
+  "telephone": "01 0001 0001",
+  "email": "example@gugle.com",
+  "address": "example road",
+  "heart_function": "custum",
+  "operation": "custum",
+  "metal": "custum",
+  "appetite": "custum",
+  "excretion": "custum",
+  "sleep_quality": "custum",
+  "disease": "custum",
+  "note": "custum",
+  "is_member": false,
+  "records": []
+}
