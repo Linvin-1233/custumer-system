@@ -11,6 +11,7 @@
 - 如果未下载 flask，apscheduler，可以通过以下命令行安装（请确保你已经安装了pip）
 - (Windows) pip install flask apscheduler
 - (Linux) pip3 install flask apscheduler
+- 内含测试.plist文件，可直接在前端删除
 ### 使用方式
 - 点击里面的start.bat就能在 localhost:5000端口下运行
 - Linux需要自己修改命令
