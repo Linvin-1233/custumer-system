@@ -7,6 +7,7 @@
 - 轻量级系统
 - json内核的plist文件后缀
 ### 注意事项！！
+- release版本只需启动exe就能运行
 - 请确保你拥有 python 3.10以上的版本，并且已经安装了 flask，apscheduler依赖
 - 如果未下载 flask，apscheduler，可以通过以下命令行安装（请确保你已经安装了pip）
 - (Windows) pip install flask apscheduler
